@@ -1,11 +1,11 @@
 [package]
-name = "embassy-bme280-sensor"
+name = "embassy-scd41-sensor"
 version = "0.1.0"
 edition = "2024"
 authors = ["Mark Berner"]
 license = "MIT OR Apache-2.0"
-homepage = "https://github.com/mark2b/embassy-bme280-sensor"
-description = "BME280 sensor driver for the Embassy async runtime"
+homepage = "https://github.com/mark2b/embassy-scd41-sensor"
+description = "SCD41 sensor driver for the Embassy async runtime"
 readme = "README.md"
 
 [features]
@@ -14,12 +14,12 @@ rp2040 = ["dep:embassy-rp"]
 examples = ["dep:defmt", "dep:defmt-rtt", "dep:panic-probe"]
 
 [[example]]
-name = "read-bme280-sensor-rp"
-path = "examples/read-bme280-sensor-rp.rs"
+name = "read-scd41-sensor-rp"
+path = "examples/read-scd41-sensor-rp.rs"
 required-features = ["rp2040", "examples"]
 
 [lib]
-name = "embassy_bme280_sensor"
+name = "embassy_scd41_sensor"
 path = "src/lib.rs"
 
 [dependencies]
