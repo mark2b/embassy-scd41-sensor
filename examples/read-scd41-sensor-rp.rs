@@ -25,11 +25,11 @@ async fn main(_spawner: Spawner) -> ! {
     let mut i2c = i2c::I2c::new_async(p.I2C0, scl, sda, Irqs, Default::default());
 
     // Create sensor instance
-    let mut sensor = SCD41Sensor::new(&mut i2c, 0x62);
+    let mut sensor = SCD41Sensor::new(0x62);
 
     // Read sensor data
     loop {
-        match sensor.read().await {
+        match sensor.read(&mut i2c).await {
             Ok(data) => {
                 info!(
                     "Temperature: {}°C, Humidity: {}%, CO2: {}",
